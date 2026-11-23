@@ -13,8 +13,12 @@
  */
 class Program
 {
+    static void Attaquer()
+    {
+        Console.WriteLine("Le héros attaque le Dragon !");
+    }
     static void Main(string[] args)
     {
-        
+        Attaquer();
     }
 }
