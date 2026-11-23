@@ -22,18 +22,49 @@ class Program
     static void Main(string[] args)
     {
         string attack_Monster;
-        Console.WriteLine("Quel monstre veux tu attaquer en premier ?");
-        attack_Monster = Console.ReadLine();
-        if (attack_Monster == "Dragon")
+        int number_Attack = 1;
+        Console.WriteLine("Un dragon, un gobelin et un zombie t'attaque !");
+        do
         {
-            Attaquer("Dragon");
-        } else if (attack_Monster == "Gobelin")
+            if (number_Attack == 1)
             {
-                Attaquer("Gobelin");
-            } else if (attack_Monster == "Zombie")
-        {
-            Attaquer("Zombie");
-        }
-        Attaquer("Dragon" + " Gobelin" + " Zombie");
+                Console.WriteLine("Quel monstre veux tu attaquer en premier ?");
+            
+            } else if (number_Attack == 2)
+                {
+                    Console.WriteLine("Quel monstre veux tu attaquer maintenant ?");
+            
+                } else
+                    {
+                        Console.WriteLine("Tape le nom du dernier monstre pour l'abbatre !");
+                    }
+            
+            attack_Monster = Console.ReadLine();
+
+            if (attack_Monster == "Dragon")
+                {
+                    Attaquer("Dragon");
+                    number_Attack++;
+                } else if (attack_Monster == "Gobelin")
+                    {
+                        Attaquer("Gobelin"); 
+                        number_Attack++;
+                    } else if (attack_Monster == "Zombie")
+                        {
+                            Attaquer("Zombie");
+                            number_Attack++;
+                        } else
+                            {
+                                Console.WriteLine("Le monstre " + attack_Monster + " ne fait pas parti des choix !");
+                            }
+
+            //Console.WriteLine(number_Attack);
+
+            /*Attaquer("Dragon" + " Gobelin" + " Zombie");
+
+            Attaquer("Dragon");
+            Attaquer("Gobelin");
+            Attaquer("Zombie");*/
+        } while (/*attack_Monster != "Dragon" && attack_Monster != "Gobelin" && attack_Monster != "Zombie" ||*/ number_Attack != 4);
     }
 }
