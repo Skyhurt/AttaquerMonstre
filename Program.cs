@@ -1,4 +1,6 @@
-﻿namespace Attaquer_monstre;
+﻿using System;
+
+namespace Attaquer_monstre;
 
 /*
     CONSIGNES
@@ -13,12 +15,25 @@
  */
 class Program
 {
-    static void Attaquer()
-    {
-        Console.WriteLine("Le héros attaque le Dragon !");
+    static void Attaquer(string attack_Monster)
+    {       
+            Console.WriteLine("Le héros attaque le " + attack_Monster + " ! ");
     }
     static void Main(string[] args)
     {
-        Attaquer();
+        string attack_Monster;
+        Console.WriteLine("Quel monstre veux tu attaquer en premier ?");
+        attack_Monster = Console.ReadLine();
+        if (attack_Monster == "Dragon")
+        {
+            Attaquer("Dragon");
+        } else if (attack_Monster == "Gobelin")
+            {
+                Attaquer("Gobelin");
+            } else if (attack_Monster == "Zombie")
+        {
+            Attaquer("Zombie");
+        }
+        Attaquer("Dragon" + " Gobelin" + " Zombie");
     }
 }
